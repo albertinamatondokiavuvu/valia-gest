@@ -378,13 +378,55 @@
 
     <!-- Team Start -->
     <div class="container-fluid p-0" style="background-color: rgb(239, 237, 237)">
-        <div class="container-xxl py-5" id="equipas">
+        <div class="container-xxl align-center py-5" id="equipas">
             <div class="container">
-                <div class="text-center justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="text-center  wow fadeInUp" data-wow-delay="0.1s">
 
                     <h1 class="mb-5">Nossa Equipa</h1>
                 </div>
                 <div class="row g-4">
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">Nome </h5>
+                                <small>Função</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">Nome </h5>
+                                <small>Função</small>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item bg-light">
                             <div class="overflow-hidden">
@@ -401,12 +443,53 @@
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Instructor Name</h5>
-                                <small>Designation</small>
+                                <h5 class="mb-0">Nome </h5>
+                                <small>Função</small>
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">Nome </h5>
+                                <small>Função</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">Nome </h5>
+                                <small>Função</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -485,14 +568,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="row justify-content-xl-center">
                         <div class="col-12 col-xl-11">
-                            <div class="mb-4 mb-md-5">
-
-                                <div>
-                                    <h4 class="mb-2">Localização</h4>
-                                    <hr class="w-50 mb-3 border-dark-subtle">
-                                    <address class="m-0 text-secondary">Luanda, Angola</address>
-                                </div>
-                            </div>
+                            
                             <div class="row mb-sm-4 mb-md-5">
                                 <div class="col-12 col-sm-6">
                                     <div class="mb-4 mb-sm-0">
@@ -548,6 +624,17 @@
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Valia.gest Ads</a>, Todos os direitos reservados.
+
+                    </div>
+                    
+                </div>
+            </div>
+
 
     </div>
     <!-- Footer End -->
