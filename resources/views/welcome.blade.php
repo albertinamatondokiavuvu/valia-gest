@@ -8,9 +8,6 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
@@ -130,7 +127,6 @@
     <!-- Service End -->
     <!-- Carousel Start -->
     <div class="container-fluid p-0" style="background-color: rgb(239, 237, 237)">
-
         <!-- Carousel End -->
         <!-- Courses Start -->
         <div class="container-xxl py-5" id="servicos">
@@ -269,7 +265,7 @@
                 <div class="row g-3">
                     <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.1s">
                         <div class="service-item pt-3">
-                            <div class="p-4">
+                            <div class="p-4 ">
                                 <h5 class="mb-3">Economia de Tempo</h5>
                                 <p> Deixe a gestão de anúncios conosco e foque no
                                     core do seu negócio.</p>
@@ -378,13 +374,13 @@
 
     <!-- Team Start -->
     <div class="container-fluid p-0" style="background-color: rgb(239, 237, 237)">
-        <div class="container-xxl align-center py-5" id="equipas">
+        <div class="container-xxl  py-5" id="equipas">
             <div class="container">
                 <div class="text-center  wow fadeInUp" data-wow-delay="0.1s">
 
                     <h1 class="mb-5">Nossa Equipa</h1>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item bg-light">
                             <div class="overflow-hidden">
@@ -507,7 +503,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="border overflow-hidden">
 
-                        <form action="#!">
+                        <form action="">
                             <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                                 <div class="col-12">
                                     <label for="nome" class="form-label">Nome Completo <span
