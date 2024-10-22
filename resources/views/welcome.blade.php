@@ -21,7 +21,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<div>
 
 
     <!-- Navbar Start -->
@@ -46,6 +46,7 @@
                         <a href="#equipas" class="dropdown-item">Equipa </a>
                     </div>
                 </div>
+                <a href="#noticia" class="nav-item nav-link">Notícias</a>
                 <a href="#contactos" class="nav-item nav-link">Contacto</a>
             </div>
 
@@ -67,8 +68,7 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h1 class="text-primary text-uppercase mb-3 animated slideInDown">Valia.gest-Ads
                                 </h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Potencializar seus resultados com gestão
-                                    especializada de tráfego pago no Meta Ads e Google Ads.</p>
+                                <p class="fs-5 text-white mb-4 pb-2">Bem-vindo ao <strong>Valia.Gest Ads</strong> , Potencialize seus resultados com gestão especializada de tráfego pago no Meta Ads e Google Ads.</p>
                                 <a href="#contactos"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Solicitar uma
                                     proposta</a>
@@ -91,6 +91,7 @@
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Sobre nós</h6>
                 <h1 class="mb-5">Nossa Expertise</h1>
+                <p>A nossa equipa de especialistas em Gestão de tráfego pago, cria e otimiza anúncios personalizados, orientados para alcançar os seus objetivos de negócio.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-sm-6 text-center" data-wow-delay="0.1s">
@@ -98,7 +99,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-lock  text-primary mb-4"></i>
                             <h5 class="mb-3">Segurança Precisa</h5>
-                            <p>Identificamos seu público-alvo ideial para maximizar o retorno sobre o investimento</p>
+                            <p>Identificamos o público certo para os seus anúncios, maximizando os resultados e o retorno sobre o investimento.</p>
                         </div>
                     </div>
                 </div>
@@ -107,7 +108,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
                             <h5 class="mb-3">Análise de dados</h5>
-                            <p>Utilizamos métricas avançadas para otimizar constantemente suascampanhas</p>
+                            <p>Utilizamos métricas avançadas para otimizar constantemente as suas campanhas.</p>
                         </div>
                     </div>
                 </div>
@@ -116,7 +117,7 @@
                         <div class="p-4">
                             <i class="fa fa-spinner fa-pulse fa-3x fa-fw mb-4"></i>
                             <h5 class="mb-3">Crescimento Acelerado</h5>
-                            <p>Estratégiaspersonalizados para impulsionar seu negócio rapidamente.</p>
+                            <p>Estratégias personalizadas para impulsionar o seu negócio de forma rápida.</p>
                         </div>
                     </div>
                 </div>
@@ -195,7 +196,7 @@
                         <div id="panel1Collapse" class="accordion-collapse collapse show"
                             aria-labelledby="panel1Heading">
                             <div class="accordion-body">
-                                Avaliamos seu negócio, mercado e concorrência para definir a melhor estratégia.
+                                Estudamos detalhadamente o seu negócio, público-alvo e objetivos para criar uma estratégia personalizada.
                             </div>
                         </div>
                     </div>
@@ -210,7 +211,7 @@
                         <div id="panel1Collapse2" class="accordion-collapse collapse "
                             aria-labelledby="panel1Heading">
                             <div class="accordion-body">
-                                Desenvolvemos um plano personalizado alinhado aos seus objetivos de negócio.
+                                Desenvolvemos um plano personalizado, alinhado com os seus objetivos de negócio.
                             </div>
                         </div>
                     </div>
@@ -219,13 +220,13 @@
                         <h2 class="accordion-header" id="header1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panel1Collapse3">
-                                3. Implementação e Otimização
+                                3. Criação 
                             </button>
                         </h2>
                         <div id="panel1Collapse3" class="accordion-collapse collapse "
                             aria-labelledby="panel1Heading">
                             <div class="accordion-body">
-                                Lançamos suas campanhas e as otimizamos continuamente para máximo desempenho.
+                                Criamos anúncios visualmente apelativos e com mensagens fortes que captam a atenção do público.
                             </div>
                         </div>
                     </div>
@@ -234,14 +235,13 @@
                         <h2 class="accordion-header" id="header1">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panel1Collapse4">
-                                4. Relatórios e Transparência
+                                4. Otimização
                             </button>
                         </h2>
                         <div id="panel1Collapse4" class="accordion-collapse collapse "
                             aria-labelledby="panel1Heading">
                             <div class="accordion-body">
-                                Fornecemos relatórios detalhados e reuniões regulares para discutir resultados e
-                                estratégias.
+                                Ajustamos continuamente as suas campanhas para garantir o máximo desempenho e retorno sobre o investimento.
 
                             </div>
                         </div>
@@ -262,47 +262,70 @@
 
                     <h1 class="mb-5">Benefícios da Valia.Gest Ads</h1>
                 </div>
-                <div class="row g-3">
-                    <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.1s">
+                <div class="row g-3 justify-content-center">
+                    
+                    <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.3s">
                         <div class="service-item pt-3">
                             <div class="p-4 ">
                                 <h5 class="mb-3">Economia de Tempo</h5>
-                                <p> Deixe a gestão de anúncios conosco e foque no
-                                    core do seu negócio.</p>
+                                <p> Deixe a gestão dos anúncios connosco e foque-se no core do seu negócio.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.5s">
                         <div class="service-item   pt-3">
                             <div class="p-4">
                                 <h5 class="mb-3"> Maior ROI</h5>
-                                <p> Otimizamos suas campanhas para maximizar o
-                                    retorno sobre o investimento em publicidade..</p>
+                                <p> Otimizamos as suas campanhas para maximizar o retorno sobre o investimento em publicidade.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="0.5s">
+                    <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="0.7s">
                         <div class="service-item  pt-3">
                             <div class="p-4">
                                 <h5 class="mb-3">Escalabilidade</h5>
-                                <p> Nossas estratégias crescem junto com seu negócio,
-                                    adaptando-se às suas necessidades.
+                                <p> As nossas estratégias crescem com o seu negócio, adaptando-se às suas necessidades.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="0.5s">
+                    <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="0.9s">
                         <div class="service-item  pt-3">
                             <div class="p-4">
                                 <h5 class="mb-3">Transparência Total</h5>
-                                <p> Acesso completo às suas campanhas e relatórios
-                                    detalhados sobre o desempenho.
+                                <p> Acesso completo às suas campanhas e relatórios detalhados sobre o desempenho.
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div>    
+                        <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="1.1s">
+                            <div class="service-item  pt-3">
+                                <div class="p-4">
+                                    <h5 class="mb-3">Otimização Contínua</h5>
+                                    <p> Monitorizamos e ajustamos as campanhas em todas as plataformas para garantir que atingem o público certo e geram os melhores resultados.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 text-center" data-wow-delay="0.1s">
+                            <div class="service-item pt-3">
+                                <div class="p-4 ">
+                                    <h5 class="mb-3">Estratégia Especializada</h5>
+                                    <p> Criamos planos de publicação à medida do seu negócio, focados nas melhores práticas para anúncios no Facebook, LinkedIn, Instagram e WhatsApp.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3  col-sm-6 text-center" data-wow-delay="1.1s">
+                            <div class="service-item  pt-3">
+                                <div class="p-4">
+                                    <h5 class="mb-3">Suporte Dedicado</h5>
+                                    <p> A nossa equipa está disponível para apoiar nas suas campanhas e responder a todas as suas dúvidas em qualquer uma destas plataformas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -317,34 +340,34 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="mb-5">Casos de Sucesso</h1>
+                <p>Os nossos clientes têm alcançado resultados excecionais com as nossas soluções de marketing digital. Experimente o Valia.Gest Ads e transforme as suas visitas em negócios lucrativos.</p>
             </div>
             <div class="row g-5">
                 <div class="accordion" id="myAccordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="header1">
                             <button class="accordion-button">
-                                1. E-commerce de Moda
+                                1. Aumento de Tráfego 
                             </button>
                         </h2>
                         <div  class="accordion-collapse collapse show"
                            >
                             <div class="accordion-body">
-                                Aumentamos as vendas em 150% em 3 meses com campanhas otimizadas no Google Shopping e Instagram Ads.
+                               <strong>E-commerce de Moda:</strong>  Aumentamos as vendas em 150% em 3 meses com campanhas otimizadas no Google Shopping e Instagram Ads.
                             </div>
                         </div>
                     </div>
                     <!-- Add your more panels here -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="header1">
-                            <button class="accordion-button"  
-                                >
-                                2. Clínica Odontológica
+                            <button class="accordion-button" >
+                                2. Conversão de Leads 
                             </button>
                         </h2>
                         <div  class="accordion-collapse collapse show "
                             >
                             <div class="accordion-body">
-                                Geramos 200 novos leads qualificados por mês, reduzindo o custo por lead em 40%.
+                            <strong>Clínica Odontológica:</strong>  Geramos 200 novos leads qualificados por mês, reduzindo o custo por lead em 40%.  
                             </div>
                         </div>
                     </div>
@@ -353,14 +376,13 @@
                         <h2 class="accordion-header" id="header1">
                             <button class="accordion-button"  
                                >
-                                3. Startup de Tecnologia
+                                3. Retorno do Investimento: 
                             </button>
                         </h2>
                         <div  class="accordion-collapse collapse show "
                             >
                             <div class="accordion-body">
-                                Expandimos a base de usuários em 300% em 6 meses com uma estratégia multicanal no Google e Facebook.
-
+                             <strong> Startup de Tecnologia:</strong> Expandimos a base de usuários até 5x em 6 meses com uma estratégia multicanal no Google e Facebook.
                             </div>
                         </div>
                     </div>
@@ -397,8 +419,8 @@
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Nome </h5>
-                                <small>Função</small>
+                                <h5 class="mb-0">Ana Silva </h5>
+                                <small> Gestor de trafego</small>
                             </div>
                         </div>
                     </div>
@@ -418,8 +440,8 @@
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Nome </h5>
-                                <small>Função</small>
+                                <h5 class="mb-0">Carlos Santos </h5>
+                                <small>Analista de dados</small>
                             </div>
                         </div>
                     </div>
@@ -460,8 +482,8 @@
                                 </div>
                             </div>
                             <div class="text-center p-4">
-                                <h5 class="mb-0">Nome </h5>
-                                <small>Função</small>
+                                <h5 class="mb-0">Mariana Costa </h5>
+                                <small>Estratega de redes sociais</small>
                             </div>
                         </div>
                     </div>
@@ -490,14 +512,35 @@
             </div>
         </div>
     </div>
-
     <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="noticia"> 
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">notícia</h6>
+                <h1 class="mb-5">Notícias</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item text-center">
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tempor2 erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+    <!-- Testimonial Start -->
+    <div class="container-fluid p-0" style="background-color: rgb(239, 237, 237)">
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="contactos">
 
         <div class="container">
             <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Contacto</h6>
+                
                 <h1 class="mb-5">Contactos</h1>
+                <p>Pronto para expandir o seu negócio nas redes sociais? Fale connosco através das nossas plataformas de contacto:</p>
             </div>
             <div class="row gy-4 gy-md-5 gy-lg-0 align-items-md-center">
                 <div class="col-12 col-lg-6">
@@ -570,29 +613,42 @@
                                     <div class="mb-4 mb-sm-0">
 
                                         <div>
-                                            <h4 class="mb-2">Telemóvel</h4>
+                                            <h4 class="mb-2">Contactos</h4>
 
                                             <hr class="w-75 mb-3 border-dark-subtle">
                                             <p class="mb-0">
-                                                <a class="link-secondary text-decoration-none" href="tel:">(244)
-                                                    000-000-000</a>
+                                                <a class="link-secondary text-decoration-none" href="tel:">
+                                                   Tel: (351) 123-456-789</a>
+                                            </p>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="https://wa.me/351987654321">
+                                                    Whatsapp: (351) 987 654 321</a>
+                                            </p>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="mailto:info@valiagestads.pt">
+                                                Email: info@valiagestads.pt
+                                                </a>
+                                            </p>
+
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="https://facebook.com/valiagestads">
+                                                Facebook: valiagestads
+                                                </a>
+                                            </p>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="https://linkedin.com/company/valiagestads">
+                                                Linkedin: valiagestads
+                                                </a>
+                                            </p>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="https://instagram.com/valiagestads">
+                                                Instagram: valiagestads
+                                                </a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="mb-4 mb-sm-0">
-
-                                        <div>
-                                            <h4 class="mb-2">Email</h4>
-                                            <hr class="w-75 mb-3 border-dark-subtle">
-                                            <p class="mb-0">
-                                                <a class="link-secondary text-decoration-none"
-                                                    href="mailto:valia.gest@gmail.com">valia.gest@gmail.com</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <div>
                                 <div>
@@ -617,7 +673,7 @@
     </div>
     <!-- Testimonial End -->
     </div>
-
+</div>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
