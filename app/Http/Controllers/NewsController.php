@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
+    public function list(News $news)
+    {
+        $news->get();
+   
+        return view('news.list.index', compact('news'));
+    }
     public function index()
     {
         $news = News::all();

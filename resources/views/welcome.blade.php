@@ -534,7 +534,7 @@
             
             <div class="owl-carousel testimonial-carousel position-relative">
                 @isset($noticia)
-            @foreach ($noticia as $noticia)
+                @foreach ($noticia as $noticia)
                 <div class="testimonial-item text-center">
                     <img class="border p-2 mx-auto mb-3" 
                     src="{{ Storage::url($noticia->capa_image) }}" 
@@ -726,7 +726,7 @@
 
     </div>
     <!-- Footer End -->
-
+</div>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
