@@ -43,7 +43,7 @@
 	color: #999999;
 }
 .datepicker td.active, .datepicker td.active:hover {
-	background: #49cced;
+	background: #27AE60;
 	border-color: #0044cc #0044cc #002a80;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -51,7 +51,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 .datepicker td.active:hover, .datepicker td.active:hover:hover, .datepicker td.active:active, .datepicker td.active:hover:active, .datepicker td.active.active, .datepicker td.active:hover.active, .datepicker td.active.disabled, .datepicker td.active:hover.disabled, .datepicker td.active[disabled], .datepicker td.active:hover[disabled] {
-	background-color: #49cced;
+	background-color: #27AE60;
 }
 .datepicker td.active:active, .datepicker td.active:hover:active, .datepicker td.active.active, .datepicker td.active:hover.active {
 	background-color: #003399 \9;

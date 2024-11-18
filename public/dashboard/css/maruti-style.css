@@ -69,7 +69,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	opacity: 0.9;
 }
 /* Top user navigation */
-#sidebar{ width:100%; background:#49cced;  position:absolute; clear:both; top:62px;}
+#sidebar{ width:100%; background:#27AE60;  position:absolute; clear:both; top:62px;}
 #sidebar > ul{ margin:0px; padding:0px; width:100%; display:block; z-index:999;} 
 #sidebar > ul > li { list-style-type:none; float:left; display:block; margin:0px; border-right:1px solid #41bedd; position:relative; padding:10px; cursor:pointer} 
 #sidebar > ul > li a{ padding:12px 0;}
@@ -1354,7 +1354,7 @@ form {
 }
 
 @media (min-width: 481px) and (max-width: 970px) {
-	body{ background:#49CCED}
+	body{ background:#27AE60}
 	#header h1 {
 		top:20px;
 	}
@@ -1365,7 +1365,7 @@ form {
 
 	#sidebar > ul > li{ float:none;}
 	#sidebar > ul > li:hover ul{ display:block;}
-	#sidebar, #sidebar > ul {	width: 43px; display: block; position: absolute; background:#49CCED; height:100%; z-index:1;}
+	#sidebar, #sidebar > ul {	width: 43px; display: block; position: absolute; background:#27AE60; height:100%; z-index:1;}
 	#sidebar > ul ul {
 		display: none;
 		position: absolute;
