@@ -8,15 +8,14 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
-    public function list(News $news)
-    {
-        $news->get();
-   
-        return view('news.list.index', compact('news'));
-    }
+    public function list($id)
+{
+    $news = News::findOrFail($id); // Busca a notícia pelo ID ou retorna 404
+    return view('news.list.index', compact('news')); // Envia para a view
+}
     public function index()
     {
-        $news = News::all();
+        $news = News::where('estado', 1)->get();
         return view('news.index.index', compact('news'));
     }
 
@@ -112,5 +111,3 @@ class NewsController extends Controller
         return redirect()->route('news.index')->with('success', 'Notícia excluída com sucesso.');
     }
 }
-
-

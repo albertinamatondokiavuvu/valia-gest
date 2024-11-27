@@ -544,7 +544,7 @@
                     <p>{{$noticia->data}}</p>
                     <div class="testimonial-text bg-light text-center p-4">
                         <p class="mb-0">{{$noticia->resumo}}...</p>
-                        <a href="">ler mais</a>
+                        <a href="{{route('list.news',$noticia->id)}}">ler mais</a>
                     </div>
                 </div>
                 @endforeach

@@ -24,8 +24,14 @@
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
     <li class="" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Perfil</span></a></li>
-
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Terminar sessão</span></a></li>
+ 
+    <li class="">
+      
+      <a title="" href="{{route('logout')}}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+      </form>
+        <i class="icon icon-share-alt"></i> <span class="text">Terminar sessão</span></a></li>
   </ul>
 </div>
 
@@ -38,16 +44,18 @@
 </div>
 <div id="content">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="{{route('home')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
   </div>
-  <div class="container align-iten-center" style="margin-bottom: 13.5%; margin-top:5%">
-    
+  <div class="container" style="margin-bottom: 13%; margin-top:13%">
       <div class="widget-box">
-        <div class="widget-content">
-            <h1 style="text-align: center">BEM VINDO AO PORTAL DO VALIA.GETS ADS</h1>
-            <button class="btn btn-inverse btn-large"><a style="text-decoration: none; color:white;" href="{{route('news.index')}}">Listar notícias</a></button>
-        </div>
-        </div>
+        <div class="widget-content" style="display: grid; place-items: center;">
+          <br>
+            <h1 style="text-align: center;" >BEM VINDO AO PORTAL DO VALIA.GETS ADS</h1>
+            <br>
+            <button class="btn btn-inverse btn-large"><a style="text-decoration: none; color:white;" href="{{ route('news.index')}}">Listar notícias</a></button>
+        <br>
+          </div>
+      </div>
   </div>
 </div>
 
@@ -64,7 +72,6 @@
 <script src="dashboard/js/maruti.dashboard.js"></script> 
 <script src="dashboard/js/maruti.chat.js"></script> 
  
-
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
   // a different page. Ignore if the value returned is a null string:

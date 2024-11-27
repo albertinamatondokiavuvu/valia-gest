@@ -1,65 +1,155 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <title>Valia.gest Ads</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="dashboard/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="dashboard/css/fullcalendar.css" />
+    <link rel="stylesheet" href="dashboard/css/maruti-style.css" />
+    <link rel="stylesheet" href="dashboard/css/maruti-media.css" class="skin-color" />
 </head>
+
 <body>
-    
-<div class="container">
-    <h1>Lista de Notícias</h1>
-    <a href="{{ route('news.create') }}" class="btn btn-primary mb-3">Adicionar Notícia</a>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+    <!--Header-part-->
+    <div id="header">
+        <h1><a href="">Valia.gest Ads</a></h1>
+    </div>
+    <!--close-Header-part-->
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Tema</th>
-                <th>Data</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($news as $item)
-                <tr>
-                    <td>{{ $item->titulo }}</td>
-                    <td>{{ $item->date }}</td>
-                    <td>
-                        <a href="{{ route('news.edit', $item->id) }}" class="btn btn-warning">Editar</a>
-                        <form action="{{ route('news.destroy', $item->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Excluir</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+        <ul class="nav">
+            <li class=""><a title="" href="#"><i class="icon icon-user"></i> <span
+                        class="text">Perfil</span></a></li>
+
+            <li class="">
+
+                <a title="" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                    <i class="icon icon-share-alt"></i> <span class="text">Terminar sessão</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!--close-top-Header-menu-->
+
+    <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+        <ul>
+            <li class="active"><a href="{{ route('home') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a>
+            </li>
+            <li> <a href="{{ route('news.index') }}"><i class="icon icon-signal"></i> <span>Notícias</span></a> </li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="content-header">
+            <div id="breadcrumb">
+                <a href="{{ route('home') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
+                <a href="#">Notícias</a>
+                <a href="#">Listar</a>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    @if (session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
+                    <a href="{{ route('news.create') }}" class="btn btn-primary mb-3">Adicionar Notícia</a>
+                    <div class="widget-box">
+
+                        <div class="widget-title">
+                            <span class="icon"><i class="icon-th"></i></span>
+                            <h5>Listar Notícias</h5>
+                        </div>
+                        <div class="widget-content nopadding">
+
+                            <table class="table table-bordered data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Título</th>
+                                        <th>Data</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach ($news as $item)
+                                        <tr style="aling-iten:cenetr;">
+                                            <td>{{ $item->titulo }}</td>
+                                            <td>{{ $item->date }}</td>
+                                            <td>
+                                                <a href="{{ route('news.edit', $item->id) }}"
+                                                    class="btn btn-warning">Editar</a>
+                                                <form action="{{ route('news.destroy', $item->id) }}" method="POST"
+                                                    style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+
+    <script src="dashboard/js/excanvas.min.js"></script>
+    <script src="dashboard/js/jquery.min.js"></script>
+    <script src="dashboard/js/jquery.ui.custom.js"></script>
+    <script src="dashboard/js/bootstrap.min.js"></script>
+    <script src="dashboard/js/jquery.flot.min.js"></script>
+    <script src="dashboard/js/jquery.flot.resize.min.js"></script>
+    <script src="dashboard/js/jquery.peity.min.js"></script>
+    <script src="dashboard/js/fullcalendar.min.js"></script>
+    <script src="dashboard/js/maruti.js"></script>
+    <script src="dashboard/js/maruti.dashboard.js"></script>
+    <script src="dashboard/js/maruti.chat.js"></script>
+
+
+    <script type="text/javascript">
+        // This function is called from the pop-up menus to transfer to
+        // a different page. Ignore if the value returned is a null string:
+        function goPage(newURL) {
+
+            // if url is empty, skip the menu dividers and reset the menu selection to default
+            if (newURL != "") {
+
+                // if url is "-", it is this page -- reset the menu:
+                if (newURL == "-") {
+                    resetMenu();
+                }
+                // else, send page to designated URL            
+                else {
+                    document.location.href = newURL;
+                }
+            }
+        }
+
+        // resets the menu selection upon entry to this page:
+        function resetMenu() {
+            document.gomenu.selector.selectedIndex = 2;
+        }
+    </script>
 </body>
+
 </html>

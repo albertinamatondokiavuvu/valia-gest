@@ -12,4 +12,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('news', NewsController::class);
 
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
-Route::get('list/{news}', [App\Http\Controllers\NewsController::class, 'list'])->name('list.news');
+Route::get('/list/{id}', [App\Http\Controllers\NewsController::class, 'list'])->name('list.news');

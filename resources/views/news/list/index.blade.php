@@ -8,7 +8,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
@@ -27,7 +28,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="{{route('welcome')}}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary">Valia.gest Ads</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -35,80 +36,81 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="" class="nav-item nav-link active">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sobre nós</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#expertise" class="dropdown-item">Expertise</a>
-                        <a href="#servicos" class="dropdown-item">Serviços</a>
-                        <a href="#processos" class="dropdown-item">Processos </a>
-                        <a href="#beneficios" class="dropdown-item">Benefícios</a>
-                        <a href="#sucessos" class="dropdown-item">Casos de sucesso</a>
-                        <a href="#equipas" class="dropdown-item">Equipa </a>
-                    </div>
-                </div>
-                <a href="#noticia" class="nav-item nav-link">Notícias</a>
-                <a href="#contactos" class="nav-item nav-link">Contacto</a>
+                <a href="{{route('welcome')}}" class="nav-item nav-link active">Home</a>
+ 
             </div>
 
 
         </div>
     </nav>
     <!-- Navbar End -->
-
-
-
-    <div class="main_title container">
-        <nav class="col-lg-9 mx-auto d-flex flex-column">
+    <div class="main_title container" style="margin-top:5%;">
+        <nav class="col-lg-9 mx-auto">
             <div class="box_list wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
-                <div class="owl-carousel owl-theme">
-                    @if (isset($news->imagens_opcional) && is_string($news->imagens_opcional))
-                        @php
-                            // Tente decodificar o JSON
-                            $imagens = json_decode($news->imagens_opcional, true);
-                        @endphp
+                @if ($news->imanges_opcional)
+                    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicadores -->
+                        <div class="carousel-indicators">
+                            @foreach (json_decode($news->imanges_opcional) as $index => $image)
+                                <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="{{ $index }}" 
+                                        class="{{ $index === 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
+                            @endforeach
+                        </div>
     
-                        @if (is_array($imagens))
-                            @foreach ($imagens as $image)
-                                <div class="item">
-                                    <img src="{{ Storage::url(trim($image)) }}" class="img-fluid" alt="Imagem" style="width: 100%; height: auto;">
+                        <!-- Carrossel de imagens -->
+                        <div class="carousel-inner">
+                            @foreach (json_decode($news->imanges_opcional) as $index => $image)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <div class="position-relative rounded overflow-hidden" 
+                                         style="max-width: 100%; height: 400px; margin: auto;">
+                                        <img src="{{ asset('storage/' . $image) }}" class="d-block w-100 h-100" 
+                                             style="object-fit: contain; max-height: 400px;" alt="Image {{ $index + 1 }}">
+                                    </div>
                                 </div>
                             @endforeach
-                        @else
-                            <p>No valid images available.</p>
-                        @endif
-                    @else
-                        <p>No images available.</p>
-                    @endif
+                        </div>
+    
+                        <!-- Controles de navegação -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                @endif
+            </div>
+    
+            <div style="margin: 20px">
+                <div class="mb-2 pb-1 rounded-0 rounded">
+                    <span class="badge badge-warning rounded-0 text-uppercase font-weight-semi-bold float-left p-2">
+                        Governo
+                    </span>
+                    <span class="text-secondary p-4"><b>{{ $news->date }}</b></span>
+                    <span class="text-body text-secondary float-right pr-2 pt-1">
+                        <small>Autor: {{ $news->autor }}</small>
+                    </span>
                 </div>
     
-                <div style="margin: 20px">
-                    <div class="mb-2 pb-1 rounded-0 rounded">
-                        <span class="badge badge-warning rounded-0 text-uppercase font-weight-semi-bold float-left p-2">Governo</span>
-                        <span class="text-secondary p-4"><b>23-10-2024</b></span>
-                        <span class="text-body text-secondary float-right pr-2 pt-1"><small>autor: ******</small></span>
-                    </div>
-                    <h3 style="border-top: 1px solid rgb(229, 229, 229)" class="pt-4 mt-2">
-                        CUANZA-SUL
-                    </h3>
-                    <h4><b>Programa KWENDA com impacto positivo em sete municípios</b></h4>
-                </div>
+                <h4><b>{{ $news->titulo }}</b></h4>
             </div>
     
             <div class="form-group">
                 <div class="form-group" style="width: 100%;">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim soluta distinctio
-                        consectetur assumenda perspiciatis, esse eveniet non quae ipsum labore modi ex
-                        doloremque odio aspernatur quam quaerat consequuntur eos eius!</p>
+                    <p style="text-align: justify;">{{ $news->conteudo }}</p>
                 </div>
             </div>
         </nav>
     </div>
     
+    
 
-    
-    
-    
+
+
+
+
 </div>
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -139,20 +141,21 @@
 <script src="/lib/waypoints/waypoints.min.js"></script>
 <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                items: 1, // Mostra uma imagem por vez
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 3000, // Tempo entre as transições
-                autoplayHoverPause: true // Pausa ao passar o mouse
-            });
-        });
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 <!-- Template Javascript -->
 <script src="/js/main.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".owl-carousel").owlCarousel({
+            items: 1, // Mostra uma imagem por vez
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000, // Tempo entre as transições
+            autoplayHoverPause: true // Pausa ao passar o mouse
+        });
+    });
+</script>
 </body>
 
 </html>

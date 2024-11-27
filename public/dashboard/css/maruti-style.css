@@ -27,7 +27,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 }
 
 #header h1 {
-    background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+    /*background: url("../img/logo.png") no-repeat scroll 0 0 transparent;*/
     height: 31px;
     left: 15px;
     line-height: 600px;
@@ -1354,7 +1354,7 @@ form {
 }
 
 @media (min-width: 481px) and (max-width: 970px) {
-	body{ background:#27AE60}
+	
 	#header h1 {
 		top:20px;
 	}

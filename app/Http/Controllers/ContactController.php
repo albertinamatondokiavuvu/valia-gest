@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
    public  function index()  {
 
-    $noticia= News::get();
+    $noticia= News::where('estado', 1)->get();
         return view('welcome',compact('noticia'));
     }
    
