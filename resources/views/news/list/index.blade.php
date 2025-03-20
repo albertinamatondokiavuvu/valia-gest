@@ -5,157 +5,175 @@
     <meta charset="utf-8">
     <title>Valia.gest Ads</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Libraries Stylesheet -->
-    <link href="/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #27AE60;
+            --verde-claro: #2ECC71;
+            --verde-escuro: #27AE60;
+            --branco: #FFFFFF;
+            --cinza: #f8f9fa;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="/css/style.css" rel="stylesheet">
+        .news-container {
+            max-width: 900px;
+            background: var(--branco);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 40px auto;
+        }
+
+        .news-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--verde-claro);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .news-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--verde-escuro);
+        }
+
+        .news-meta {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .news-category {
+            background: white;
+            color: var(--branco);
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .news-carousel img {
+            height: 400px;
+            object-fit: contain;
+        }
+
+        .news-container {
+            max-width: 900px;
+            background: var(--branco);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: auto;
+            margin-top: 80px;
+            /* Ajuste para evitar sobreposição com o menu */
+            min-height: 80vh;
+            /* Mantém uma altura mínima para centralização */
+        }
+        .news-carousel {
+        height: 500px; /* Altura fixa para todo o carrossel */
+        
+    }
+
+    .carousel-inner {
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        height: 100% !important;
+    }
+
+    .news-carousel img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover; /* Mantém proporção e preenche o espaço */
+    }
+
+    /* Ajuste para dispositivos móveis */
+    @media (max-width: 768px) {
+        .news-carousel {
+            height: 300px;
+        }
+    }
+    .news-content p {
+    overflow-wrap: break-word; 
+    word-break: break-word;    
+    max-width: 100%;           
+    hyphens: auto;            
+}
+    </style>
 </head>
 
-<div>
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="{{route('welcome')}}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary">Valia.gest Ads</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('welcome')}}" class="nav-item nav-link active">Home</a>
- 
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/img/Ativo 16Gest_Ads.png" alt="Valia.Gest Ads" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{route('welcome')}}">Home</a></li>
+                </ul>
             </div>
-
-
         </div>
     </nav>
-    <!-- Navbar End -->
-    <div class="main_title container" style="margin-top:5%;">
-        <nav class="col-lg-9 mx-auto">
-            <div class="box_list wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
-                @if ($news->imanges_opcional)
-                    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <!-- Indicadores -->
-                        <div class="carousel-indicators">
-                            @foreach (json_decode($news->imanges_opcional) as $index => $image)
-                                <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="{{ $index }}" 
-                                        class="{{ $index === 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
-                            @endforeach
-                        </div>
-    
-                        <!-- Carrossel de imagens -->
-                        <div class="carousel-inner">
-                            @foreach (json_decode($news->imanges_opcional) as $index => $image)
-                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <div class="position-relative rounded overflow-hidden" 
-                                         style="max-width: 100%; height: 400px; margin: auto;">
-                                        <img src="{{ asset('storage/' . $image) }}" class="d-block w-100 h-100" 
-                                             style="object-fit: contain; max-height: 400px;" alt="Image {{ $index + 1 }}">
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-    
-                        <!-- Controles de navegação -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                @endif
-            </div>
-    
-            <div style="margin: 20px">
-                <div class="mb-2 pb-1 rounded-0 rounded">
-                    <span class="badge badge-warning rounded-0 text-uppercase font-weight-semi-bold float-left p-2">
-                        Governo
-                    </span>
-                    <span class="text-secondary p-4"><b>{{ $news->date }}</b></span>
-                    <span class="text-body text-secondary float-right pr-2 pt-1">
-                        <small>Autor: {{ $news->autor }}</small>
-                    </span>
-                </div>
-    
-                <h4><b>{{ $news->titulo }}</b></h4>
-            </div>
-    
-            <div class="form-group">
-                <div class="form-group" style="width: 100%;">
-                    <p style="text-align: justify;">{{ $news->conteudo }}</p>
-                </div>
-            </div>
-        </nav>
-    </div>
-    
-    
 
-
-
-
-
-</div>
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Valia.gest Ads</a>, Todos os direitos reservados.
-
-                </div>
-
-            </div>
+    <div class="container news-container" style="margin-top: 8%">
+        <div class="news-header">
+            <span class="news-category"></span>
+            <span class="news-meta">
+                <i class="far fa-calendar-alt"></i> {{ $news->date }} |
+                <i class="fas fa-user"></i> {{ $news->autor }}
+            </span>
         </div>
 
+        <h1 class="news-title text-center" style="text-transform: uppercase">{{ $news->titulo }}</h1>
 
+        @if ($news->imanges_opcional)
+        <div id="newsCarousel" class="carousel slide news-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                @foreach ($news->imanges_opcional as $index => $image)
+                    <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="{{ $index }}"
+                        class="{{ $index === 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                @endforeach
+            </div>
+    
+            <div class="carousel-inner">
+                @foreach ($news->imanges_opcional as $index => $image)
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                        <img src="{{ asset('storage/' . $image) }}" class="d-block w-100"
+                            alt="Imagem {{ $index + 1 }}">
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    @endif
+
+        <div class="news-content mt-4">
+            <h5 class="text-center">{{$news->resumo}}</h5>
+            <p>{!! $news->conteudo !!}</p>
+        </div>
     </div>
-    <!-- Footer End -->
-</div>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <footer class="bg-success text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Valia.Gest Ads. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para Paginação Responsiva -->
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/lib/wow/wow.min.js"></script>
-<script src="/lib/easing/easing.min.js"></script>
-<script src="/lib/waypoints/waypoints.min.js"></script>
-<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<!-- Template Javascript -->
-<script src="/js/main.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".owl-carousel").owlCarousel({
-            items: 1, // Mostra uma imagem por vez
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 3000, // Tempo entre as transições
-            autoplayHoverPause: true // Pausa ao passar o mouse
-        });
-    });
-</script>
 </body>
 
 </html>

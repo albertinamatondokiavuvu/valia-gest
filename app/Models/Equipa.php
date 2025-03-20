@@ -6,31 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class News extends Model
+class Equipa extends Model
 {
-
     use HasFactory;
     protected $guarded=['id'];
-    protected $casts = [
-        'imanges_opcional' => 'array',
-    ];
 
 protected $dates = [
     'date', // Isso converte automaticamente o campo para Carbon
 ];
-
 // Garanta que o slug seja gerado automaticamente
 protected static function boot()
 {
     parent::boot();
 
-    static::creating(function ($news) {
-        $news->slug = self::generateUniqueSlug($news->titulo);
+    static::creating(function ($equipas) {
+        $equipas->slug = self::generateUniqueSlug($equipas->nome);
     });
 
-    static::updating(function ($news) {
-        if ($news->isDirty('titulo')) {
-            $news->slug = self::generateUniqueSlug($news->titulo, $news->id);
+    static::updating(function ($equipas) {
+        if ($equipas->isDirty('nome')) {
+            $equipas->slug = self::generateUniqueSlug($equipas->nome, $equipas->id);
         }
     });
 }
@@ -41,7 +36,7 @@ private static function generateUniqueSlug($title, $id = null)
     $counter = 1;
     $originalSlug = $slug;
 
-    while (News::where('slug', $slug)->where('id', '!=', $id)->exists()) {
+    while (equipa::where('slug', $slug)->where('id', '!=', $id)->exists()) {
         $slug = $originalSlug . '-' . $counter;
         $counter++;
     }

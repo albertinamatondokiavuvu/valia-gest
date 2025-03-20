@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Equipa;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
@@ -12,8 +13,9 @@ class ContactController extends Controller
 {
    public  function index()  {
 
-    $noticia= News::where('estado', 1)->get();
-        return view('welcome',compact('noticia'));
+    $news= News::where('estado', 1)->orderBy('created_at', 'desc')->get();
+    $equipa= Equipa::where('estado', 1)->get();
+        return view('welcome',compact('news','equipa'));
     }
    
     public function send(Request $request)
@@ -27,7 +29,7 @@ class ContactController extends Controller
         $data = $request->only(['name', 'email', 'message']);
         
         // Enviar o e-mail
-        Mail::to('albertinakiavuvu11@gmail.com')->send(new ContactMail($data));
+        Mail::to('info@valiagestads.pt')->send(new ContactMail($data));
 
         return redirect()->back()->with('success', 'Mensagem enviada com sucesso!');
     }

@@ -2,7 +2,7 @@
 <html lang="pt">
 
 <head>
-    <title>Valia.gest Ads - Nova Notícia</title>
+    <title>Valia.gest Ads - Adicionar Membro da Valia-gest</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dashboard/css/bootstrap.min.css" />
@@ -68,15 +68,7 @@
             font-weight: 500;
             color: #444;
         }
-    </style>
-</head>
 
-<body>
-
-    <div id="header">
-        <h1><a href="">Valia.gest Ads</a></h1>
-    </div>
-    <style>
         #header {
             background-color: #2e363f !important;
         }
@@ -90,16 +82,23 @@
             /* Cor ao passar o mouse */
         }
     </style>
+</head>
+
+<body>
+
+    <div id="header">
+        <h1><a href="">Valia.gest Ads</a></h1>
+    </div>
+
     <div id="user-nav" class="navbar navbar-inverse">
         <ul class="nav">
-
+           
             <li class=""><a title="" href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                        class="icon icon-share-alt"></i> <span class="text">Terminar sessão</span></a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
-            </li>
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon icon-share-alt"></i> <span
+                        class="text">Terminar sessão</span></a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        </form></li>
         </ul>
     </div>
 
@@ -107,14 +106,14 @@
         <ul>
             <li class="active"><a href="{{ route('home') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a>
             </li>
-            <li> <a href="{{ route('news.index') }}"><i class="icon icon-signal"></i> <span>Notícias</span></a> </li>
+            <li> <a href="{{ route('equipas.index') }}"><i class="icon icon-signal"></i> <span>Equipa</span></a> </li>
         </ul>
     </div>
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb"> <a href="{{ route('home') }}" title="Go to Home" class="tip-bottom"><i
                         class="icon-home"></i> Home</a>
-                <a href="{{ route('news.index') }}">Notícias</a>
+                <a href="{{ route('equipas.index') }}">Equipa</a>
                 <a href="#">Adicionar</a>
             </div>
         </div>
@@ -124,60 +123,54 @@
                 <div class="span12">
                     <div class="widget-box">
                         <div class="widget-title">
-                            <h5>Criar Nova Notícia</h5>
+                            <h5>Cadastrar membro</h5>
                         </div>
 
                         <div class="widget-content">
-                            <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('equipas.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row-fluid">
                                     <!-- Coluna Esquerda -->
                                     <div class="span8">
+                                      
+
+
                                         <div class="form-section">
+                                            <h4 class="section-title">Perfil</h4>
+
                                             <div class="control-group">
-                                                <label class="control-label">Título da Notícia</label>
-                                                <div class="controls">
-                                                    <input type="text" class="span12" name="titulo"
-                                                        placeholder="Insira o título principal" required>
-                                                </div>
+                                                <label class="control-label">Nome completo</label>
+                                                <input type="text" class="span12" placeholder="Primeiro e último nome" name="nome" required>
                                             </div>
 
                                             <div class="control-group">
-                                                <label class="control-label">Resumo</label>
-                                                <div class="controls">
-                                                    <input type="text" class="span12" name="resumo"
-                                                        placeholder="Breve descrição para pre visualização"></input>
-                                                </div>
+                                                <label class="control-label">Função</label>
+                                                <input type="text" class="span12" name="funcao"
+                                                    placeholder="area de especialidade">
                                             </div>
-
                                             <div class="control-group">
-                                                <label class="control-label">Conteúdo</label>
-                                                <div class="editor-wrapper">
-                                                    <div id="editor" class="border rounded p-2 w-100"
-                                                        style="min-height: 373px;"></div>
-                                                </div>
-                                                <input type="hidden" name="conteudo" id="conteudo">
+                                                <label class="control-label">Descrição</label>
+                                                <input type="text" class="span12" name="resumo"
+                                                    placeholder="area de especialidade">
                                             </div>
+                                            
                                         </div>
+
                                     </div>
 
                                     <!-- Coluna Direita -->
                                     <div class="span4">
                                         <div class="form-section">
-                                            <h4 class="section-title">Configurações</h4>
+                                            <h4 class="section-title">Perfil</h4>
 
-                                            <div class="control-group">
-                                                <label class="control-label">Data de Publicação</label>
-                                                <input type="date" class="span12" name="date" required>
+                                            <div class="file-upload">
+                                                <div class="control-group">
+                                                    <label class="control-label">Foto de Capa</label>
+                                                    <input type="file" name="capa_image" required>
+                                                    <div class="preview-container" id="capa-preview"></div>
+                                                </div>
                                             </div>
-
-                                            <div class="control-group">
-                                                <label class="control-label">Autor</label>
-                                                <input type="text" class="span12" name="autor"
-                                                    placeholder="Nome do autor">
-                                            </div>
-
                                             <div class="control-group">
                                                 <label class="control-label">Status</label>
                                                 <select class="span12" name="estado">
@@ -187,31 +180,12 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-section">
-                                            <h4 class="section-title">Imagens</h4>
-
-                                            <div class="file-upload">
-                                                <div class="control-group">
-                                                    <label class="control-label">Capa Principal</label>
-                                                    <input type="file" name="capa_image" required>
-                                                    <div class="preview-container" id="capa-preview"></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="file-upload">
-                                                <div class="control-group">
-                                                    <label class="control-label">Galeria</label>
-                                                    <input type="file" name="imanges_opcional[]" multiple>
-                                                    <div class="preview-container" id="galeria-preview"></div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-primary btn-large">
-                                        <i class="icon icon-save"></i> Publicar Notícia
+                                        <i class="icon icon-save"></i> Cadastrar
                                     </button>
                                 </div>
                             </form>

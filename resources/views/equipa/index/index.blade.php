@@ -47,14 +47,14 @@
         <ul>
             <li class="active"><a href="{{ route('home') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a>
             </li>
-            <li> <a href="{{ route('news.index') }}"><i class="icon icon-signal"></i> <span>Notícias</span></a> </li>
+            <li> <a href="{{ route('equipas.index') }}"><i class="icon icon-signal"></i> <span>Equipa</span></a> </li>
         </ul>
     </div>
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
                 <a href="{{ route('home') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-                <a href="#">Notícias</a>
+                <a href="#">Membros</a>
                 <a href="#">Listar</a>
             </div>
         </div>
@@ -66,33 +66,33 @@
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
-                    <a href="{{ route('news.create') }}" class="btn btn-primary mb-3">Adicionar Notícia</a>
+                    <a href="{{ route('equipas.create') }}" class="btn btn-primary mb-3">Adicionar Membro do valia-gest</a>
                     <div class="widget-box">
 
                         <div class="widget-title">
                             <span class="icon"><i class="icon-th"></i></span>
-                            <h5>Listar Notícias</h5>
+                            <h5>Listar Membros</h5>
                         </div>
                         <div class="widget-content nopadding">
 
                             <table class="table table-bordered data-table">
                                 <thead>
                                     <tr>
-                                        <th>Título</th>
-                                        <th>Data</th>
+                                        <th>Nome</th>
+                                        <th>Função</th>
                                         <th>Opções</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    @foreach ($news as $item)
+                                    @foreach ($equipas as $item)
                                         <tr style="aling-iten:cenetr;">
-                                            <td>{{ $item->titulo }}</td>
-                                            <td>{{ $item->date }}</td>
+                                            <td>{{ $item->nome }}</td>
+                                            <td>{{ $item->função }}</td>
                                             <td>
-                                                <a href="{{ route('news.edit', $item->slug) }}"
+                                                <a href="{{ route('equipas.edit', $item->slug) }}"
                                                     class="btn btn-warning">Editar</a>
-                                                <form action="{{ route('news.destroy', $item->slug) }}" method="POST"
+                                                <form action="{{ route('equipas.destroy', $item->slug) }}" method="POST"
                                                     style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')

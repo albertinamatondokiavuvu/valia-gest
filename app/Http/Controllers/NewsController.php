@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
-    public function list($id)
+    public function list(News $news)
 {
-    $news = News::findOrFail($id); // Busca a notícia pelo ID ou retorna 404
+    
     return view('news.list.index', compact('news')); // Envia para a view
 }
     public function index()
@@ -23,7 +23,6 @@ class NewsController extends Controller
     {
         return view('news.create.index');
     }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -32,7 +31,7 @@ class NewsController extends Controller
             'imanges_opcional.*' => 'image|nullable',
             'conteudo' => 'required|string',
         ]);
-
+    
         $news = new News();
         $news->titulo = $request->titulo;
         $news->conteudo = $request->conteudo;
@@ -40,23 +39,22 @@ class NewsController extends Controller
         $news->autor = $request->autor;
         $news->resumo = $request->resumo;
         $news->estado = $request->estado;
-
+    
         if ($request->hasFile('capa_image')) {
-            $news->capa_image = $request->file('capa_image')->store('covers','public');
+            $news->capa_image = $request->file('capa_image')->store('covers', 'public');
         }
-
+    
         if ($request->hasFile('imanges_opcional')) {
-            $paths = []; // Criar um array para armazenar os caminhos
+            $paths = [];
             foreach ($request->file('imanges_opcional') as $image) {
-                $paths[] = $image->store('optional','public'); // Adiciona cada caminho ao array
+                $paths[] = $image->store('optional', 'public');
             }
-            $news->imanges_opcional = json_encode($paths); // Converte o array para JSON
+            $news->imanges_opcional = $paths; // Remova o json_encode aqui!
         }
-
+    
         $news->save();
         return redirect()->route('news.index')->with('success', 'Notícia criada com sucesso.');
     }
-
     public function edit(News $news)
     {
         return view('news.edit.index', compact('news'));
@@ -67,46 +65,44 @@ class NewsController extends Controller
         $request->validate([
             'titulo' => 'required|string|max:255',
             'capa_image' => 'image|nullable',
-            'imanges_opcional.*' => 'image|nullable',
+            'imanges_opcional.*' => 'image|nullable', // Campo com nome incorreto (se mantido)
             'conteudo' => 'required|string',
         ]);
-
+    
         $news->titulo = $request->titulo;
         $news->conteudo = $request->conteudo;
         $news->date = $request->date;
         $news->autor = $request->autor;
         $news->resumo = $request->resumo;
         $news->estado = $request->estado;
-
+    
         if ($request->hasFile('capa_image')) {
-            Storage::delete($news->capa_image); // Remover a imagem anterior
-            $news->capa_image = $request->file('capa_image')->store('covers','public');
+            Storage::disk('public')->delete($news->capa_image);
+            $news->capa_image = $request->file('capa_image')->store('covers', 'public');
         }
-
-         // Upload das imagens opcionais
-    if ($request->hasFile('imanges_opcional')) {
-        // Remover imagens anteriores
-        $old_images = json_decode($news->imanges_opcional);
-        foreach ($old_images as $image) {
-            Storage::delete($image);
+    
+        if ($request->hasFile('imanges_opcional')) {
+            // Deletar imagens antigas (se existirem)
+            if ($news->imanges_opcional) {
+                foreach ($news->imanges_opcional as $oldImage) {
+                    Storage::disk('public')->delete($oldImage);
+                }
+            }
+    
+            // Adicionar novas imagens
+            $paths = [];
+            foreach ($request->file('imanges_opcional') as $image) {
+                $paths[] = $image->store('optional', 'public');
+            }
+            $news->imanges_opcional = $paths; // Remova o json_encode aqui!
         }
-        $paths = []; // Criar um array para armazenar os caminhos
-        foreach ($request->file('imanges_opcional') as $image) {
-            $paths[] = $image->store('optional','public'); // Adiciona cada caminho ao array
-        }
-        $news->imanges_opcional = json_encode($paths); // Converte o array para JSON
-    }
+    
         $news->save();
         return redirect()->route('news.index')->with('success', 'Notícia atualizada com sucesso.');
     }
-
     public function destroy(News $news)
     {
         Storage::delete($news->capa_image); // Remover a imagem de capa
-        $old_images = json_decode($news->imanges_opcional);
-        foreach ($old_images as $image) {
-            Storage::delete($image);
-        }
         $news->delete();
         return redirect()->route('news.index')->with('success', 'Notícia excluída com sucesso.');
     }

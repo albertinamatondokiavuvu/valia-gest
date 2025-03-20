@@ -1,0 +1,329 @@
+
+:root {
+    --primary: #27AE60;
+    --verde-claro: #2ECC71;
+    /* Verde claro */
+    --verde-escuro: #27AE60;
+    /* Verde escuro para hover */
+    --branco: #FFFFFF;
+    /* Branco */
+    --preto: #000000;
+    /* Preto (para detalhes e bordas) */
+}
+
+/* Garante que todas as cards sejam do mesmo tamanho */
+.news-card {
+    height: 100%;
+    /* Faz com que as cards preencham a altura total da coluna */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Garante que as imagens tenham o mesmo tamanho */
+.news-img {
+    height: 200px;
+    /* Ajuste conforme necessário */
+    object-fit: cover;
+    /* Corta ou redimensiona a imagem para se ajustar */
+}
+
+/* Centraliza o conteúdo do card */
+.news-card-body {
+    text-align: center;
+}
+
+
+
+/* Alterar o fundo de seções */
+section {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+/* Estilo para o título das seções */
+h2 {
+    color: var(--verde-claro);
+    font-weight: bold;
+}
+
+/* Alterar o fundo das cartas */
+.card {
+    background-color: var(--branco);
+    border: 1px solid var(--preto);
+}
+
+/* Alterar a cor dos botões */
+button,
+.btn {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    border: none;
+}
+
+/* Efeito de hover para botões */
+button:hover,
+.btn:hover {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+}
+
+/* Altere a cor de links */
+a {
+    color: var(--verde-claro);
+    text-decoration: none;
+}
+
+/* Hover para links */
+a:hover {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: var(--verde-claro);
+    color: var(--branco);
+}
+
+/* Cards de notícias */
+.news-card {
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 1px solid var(--preto);
+}
+
+.news-card-body {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+.news-card-body .card-title {
+    color: var(--verde-claro);
+}
+
+/* Ajuste para o formulário de contato */
+input,
+textarea {
+    border: 1px solid var(--preto);
+    background-color: var(--branco);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--verde-claro);
+    outline: none;
+}
+
+/* Estilo para ícones */
+.fas,
+.fab {
+    color: var(--verde-claro);
+}
+
+/* Menu de navegação */
+nav {
+    background-color: var(--branco);
+    color: var(--verde-claro);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    color: var(--verde-claro) !important;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    color: var(--verde-escuro) !important;
+    text-decoration: none;
+    background-color: var(--branco) !important;
+}
+
+/* Sombra para seções com bg-light, empurrada para fora */
+body {
+    background-color: gray;
+}
+
+section.bg-light {
+    background-color: white;
+
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../img/im.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    z-index: 1;
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Carrossel de Notícias */
+.testimonial-item {
+    margin-bottom: 30px;
+}
+
+.testimonial-item img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.testimonial-text {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* Slideshow de Notícias */
+.news-card {
+    border: none;
+}
+
+.news-card img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.news-card-body {
+    padding: 15px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  /* basic article elements styling */
+  article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .article-body {
+    padding: 24px;
+  }
+  
+  article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+  }
+  
+  article a:focus {
+    outline: 1px dotted #28666e;
+  }
+  
+  article a .icon {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  /* using the has() relational pseudo selector to update our custom properties */
+  article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+     /* Navbar links */
+     .navbar-nav .nav-link {
+        color: white !important;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 10px 15px;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Efeito hover */
+    .navbar-nav .nav-link:hover {
+        background-color: white;
+        color: #27AE60 !important;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+      /* Remover efeito hover do logo */
+      .navbar-brand img {
+        pointer-events: none;
+    }
+  
